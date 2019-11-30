@@ -8,7 +8,7 @@
 		<script>
 
 			let myScore = 0
-			let compScore = 0
+			let computerScore = 0
 
 			function computerPlay(){
 				let go = Math.floor(Math.random() * 3)
@@ -27,36 +27,36 @@
 				return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
 			}
 
-			function playRound(usrSel, compSel){
-					if (usrSel === null) {
+			function playRound(playerSelection, computerSelection){
+					if (playerSelection === null) {
 						i--;
 						return "You kinda need to select something…";
-					} else if ((usrSel.toUpperCase() !== "ROCK") && (usrSel.toUpperCase() !== "SCISSORS") && (usrSel.toUpperCase() !== "PAPER")){
+					} else if ((playerSelection.toUpperCase() !== "ROCK") && (playerSelection.toUpperCase() !== "SCISSORS") && (playerSelection.toUpperCase() !== "PAPER")){
 						i--;
 						return "That wasn't an option wiseguy…";
-					} else if ((usrSel.toUpperCase() === "SCISSORS" && compSel === "PAPER") || (usrSel.toUpperCase() === "ROCK" && compSel === "SCISSORS") || (usrSel.toUpperCase() === "PAPER" && compSel === "ROCK")){
+					} else if ((playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "PAPER") || (playerSelection.toUpperCase() === "ROCK" && computerSelection === "SCISSORS") || (playerSelection.toUpperCase() === "PAPER" && computerSelection === "ROCK")){
 						myScore += 1;
-						return `You won the round! ${inptSCase(usrSel)} beats ${inptSCase(compSel)}`;
-					} else if (usrSel.toUpperCase() === compSel){
-						return `Both ${inptSCase(compSel)}, it's a draw!`;		
+						return `You won the round! ${inptSCase(playerSelection)} beats ${inptSCase(computerSelection)}`;
+					} else if (playerSelection.toUpperCase() === computerSelection){
+						return `Both ${inptSCase(computerSelection)}, it's a draw!`;		
 					} else {
-						compScore += 1;
-						return `Ya lost pardner! ${inptSCase(compSel)} beats ${inptSCase(usrSel)}`;
+						computerScore += 1;
+						return `Ya lost pardner! ${inptSCase(computerSelection)} beats ${inptSCase(playerSelection)}`;
 					}
 			}
 
 			function game(){
 				for (i = 1; i < 6; i++){
 					computerPlay()
-					const usrSel = prompt("Rock, Paper or Scissors?");
-					const compSel = computerPlay();
-					console.log(playRound(usrSel, compSel))
+					const playerSelection = prompt("Rock, Paper or Scissors?");
+					const computerSelection = computerPlay();
+					console.log(playRound(playerSelection, computerSelection))
 					console.log(myScore);
-					console.log(compScore);
+					console.log(computerScore);
 				}
-				if (myScore > compScore){
+				if (myScore > computerScore){
 					alert("You won the game!")
-				} else if (myScore < compScore) {
+				} else if (myScore < computerScore) {
 					alert("You lost… Try again!")
 				} else {
 					alert("it's a draw!")
