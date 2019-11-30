@@ -7,60 +7,60 @@
 	<body>
 		<script>
 
+			let myScore = 0
+			let compScore = 0
+
 			function computerPlay(){
-				let go = Math.ceil(Math.random() * 3)
-				if (go === 1){
+				let go = Math.floor(Math.random() * 3)
+				if (go === 0){
 					return "ROCK";
-				} else if (go === 2){
+				} else if (go === 1){
 					return "PAPER";
 				} else {
 					return "SCISSORS";
 				}
 			}
 
-			let myScore = 0
-			let computerScore = 0
-
-			function outcomeSentenceCase(x){
+			//changes inputs to Sentence case
+			function inptSCase(x){
 				lowerCase = x.toLowerCase();
 				return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
 			}
 
-			function playRound(playerSelection, computerSelection){
-					if (playerSelection === null) {
+			function playRound(usrSel, compSel){
+					if (usrSel === null) {
 						i--;
 						return "You kinda need to select something…";
-					} else if ((playerSelection.toUpperCase() !== "ROCK") && (playerSelection.toUpperCase() !== "SCISSORS") && (playerSelection.toUpperCase() !== "PAPER")){
+					} else if ((usrSel.toUpperCase() !== "ROCK") && (usrSel.toUpperCase() !== "SCISSORS") && (usrSel.toUpperCase() !== "PAPER")){
 						i--;
 						return "That wasn't an option wiseguy…";
-					} else if ((playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "PAPER") || (playerSelection.toUpperCase() === "ROCK" && computerSelection === "SCISSORS") || (playerSelection.toUpperCase() === "PAPER" && computerSelection === "ROCK")){
+					} else if ((usrSel.toUpperCase() === "SCISSORS" && compSel === "PAPER") || (usrSel.toUpperCase() === "ROCK" && compSel === "SCISSORS") || (usrSel.toUpperCase() === "PAPER" && compSel === "ROCK")){
 						myScore += 1;
-						return `You won the round! ${outcomeSentenceCase(playerSelection)} beats ${outcomeSentenceCase(computerSelection)}`;
-					} else if (playerSelection.toUpperCase() === computerSelection){
-						return `Both ${outcomeSentenceCase(computerSelection)}, it's a draw!`;		
+						return `You won the round! ${inptSCase(usrSel)} beats ${inptSCase(compSel)}`;
+					} else if (usrSel.toUpperCase() === compSel){
+						return `Both ${inptSCase(compSel)}, it's a draw!`;		
 					} else {
-						computerScore += 1;
-						return `Ya lost pardner! ${outcomeSentenceCase(computerSelection)} beats ${outcomeSentenceCase(playerSelection)}`;
+						compScore += 1;
+						return `Ya lost pardner! ${inptSCase(compSel)} beats ${inptSCase(usrSel)}`;
 					}
 			}
 
 			function game(){
 				for (i = 1; i < 6; i++){
 					computerPlay()
-					const playerSelection = prompt("Rock, Paper or Scissors?");
-					const computerSelection = computerPlay();
-					console.log(playRound(playerSelection, computerSelection))
+					const usrSel = prompt("Rock, Paper or Scissors?");
+					const compSel = computerPlay();
+					console.log(playRound(usrSel, compSel))
 					console.log(myScore);
-					console.log(computerScore);
+					console.log(compScore);
 				}
-				if (myScore > computerScore){
+				if (myScore > compScore){
 					alert("You won the game!")
-				} else if (myScore < computerScore) {
+				} else if (myScore < compScore) {
 					alert("You lost… Try again!")
 				} else {
 					alert("it's a draw!")
 				}
-
 			}
 
 			console.log(game());
