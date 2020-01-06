@@ -1,0 +1,259 @@
+html { 
+	font-family: 'Press Start 2P', cursive;
+	min-width: 960px;
+}
+
+body {
+	margin: 0;
+}
+
+#intro {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0 40px;
+	min-width: 960px;
+}
+
+#intro_text {
+	font-size: 14px;
+	line-height: 1.8;
+	text-align: center;
+}
+
+#intro_text_bold {
+	font-size: 24px;
+}
+
+#game_area {
+	display: flex;
+	justify-content: space-evenly;
+	height: 600px;
+	margin: 0 20px;
+	z-index: 1;
+}
+
+.play_score_area {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-width: 430px;
+	flex: 1;
+}
+
+.play_area {
+	display: flex;
+	justify-content: space-between;
+	flex: 3;
+	min-height: 540px;
+}
+
+.play_section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 215px;
+	flex: initial;
+}
+
+.play_choice {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 160px;
+	margin: 10px 0;
+}
+
+.choice_button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 170px;
+	width: 200px;
+	border-radius: 15px;
+	border: 1px solid transparent;
+	font-family: 'Press Start 2P', cursive;
+}
+
+/*
+.choice_button_focus {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 170px;
+	width: 200px;
+	border-radius: 15px;
+	border: 1px solid transparent;
+	background: #E5E5E5;
+	font-family: 'Press Start 2P', cursive;
+}
+*/
+
+.choice_button:focus {
+	outline: 1px solid transparent;
+}
+
+.choice_image {
+	display: flex;
+	justify-content: center;
+	height: 110px;
+}
+
+.choice_button p {
+	margin: 0;
+	padding: 12px 0 0;
+}
+
+#my_rock:hover, #my_paper:hover, #my_scissors:hover {
+	background-color: #E5E5E5;
+}
+
+/*
+#my_rock:active, #my_paper:active, #my_scissors:active {
+	background-color: #E5E5E5;
+	box-shadow: 0px 0px 6px 0px inset #B3B3B3;
+}
+*/
+	
+#my_rock {
+	background: url(../images/pxl_rock.png) no-repeat;
+	background-position: 21px 15px;
+	background-size: auto 110px;
+	padding: 131px 0 10px;
+	font-size: 16px;
+}
+
+#my_paper {
+	background: url(../images/pxl_paper.png) no-repeat;
+	background-position: 17px 15px;
+	background-size: auto 110px;
+	padding: 131px 0 10px;
+	font-size: 16px;
+}
+
+#my_scissors {
+	background: url(../images/pxl_scissors.png) no-repeat;
+	background-position: 10px 16px;
+	background-size: auto 104px;
+	padding: 131px 0 10px;
+	font-size: 16px;
+}
+
+#rock, #paper, #scissors {
+	height: auto;
+	width: 100%;
+}
+
+.pick p {
+	text-align: center;
+	margin: 10px 0 0;
+	line-height: 1.6;
+	font-size: 16px;
+}
+
+#rock, #paper {
+	height: 100%;
+	width: auto;
+}
+
+#scissors {
+	height: 95%;
+	width: auto;
+	padding-top: 2%;
+}
+
+.pick_section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1 0 215px;
+}
+
+#pick_top {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	margin: 10px 10px 5px;
+	flex: 0 1 30%;
+	width: 100%;
+}
+
+#pick_bottom {
+	display: flex;
+	justify-content: center;
+	margin: 5px 10px 10px;
+	flex: 1 0 calc(240px + 10vw);
+	min-height: 300px;
+	max-height: 476px;
+	width: 100%;
+}
+
+#my_play_image {
+	flex: 1;
+	text-align: center;
+}
+
+#my_image, #computer_image {
+	height: auto;
+	width: 90%;
+	margin: 30px 10px 0;
+}
+
+.score_area {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	flex: 1;
+	font-size: 14px;
+	height: 54px;
+}
+
+#my_score_count, #computer_score_count {
+	margin: 20px 0 0;
+}
+
+#my_score, #computer_score {
+	margin: 25px 0 0;
+}
+
+#my_score {
+	margin-left: auto;
+}
+
+#my_score_count {
+	margin-left: 20px;
+}
+
+#computer_score_count {
+	margin-right: 20px;
+	margin-left: 2px;
+}
+
+#computer_score {
+	margin-right: auto;
+}
+
+#my_score_count, #computer_score_count {
+	font-size: 25px;
+}
+
+#centre_line {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	min-width: 60px;
+	flex: initial;
+}
+
+#centre_line p {
+	text-align: center;
+}
+
+.line {
+	border-right: 3px solid black;
+	flex: 1;
+	width: 27px;
+}
